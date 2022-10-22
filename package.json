@@ -34,5 +34,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "node-scss": "^7.0.3",
+    "sass": "^1.55.0"
   }
 }

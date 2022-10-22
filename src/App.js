@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Form } from './components/forms'
-import './App.css';
+import './App.scss';
 
 const App = () => {
   const [images, setImages] = useState();
