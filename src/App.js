@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Form } from './components/forms'
 import './App.css';
 
 const App = () => {
@@ -18,6 +19,7 @@ const App = () => {
 
   return (
     <div className='app'>
+      <Form />
       {
         images && images.map(img => (
           <div key={img.id} >
