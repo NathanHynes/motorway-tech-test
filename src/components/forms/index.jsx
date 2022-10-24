@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { FormErrorMessage } from "./form-error-message";
+import { Container } from '../container'
+import styles from './form.module.scss'
 
 
-const EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+const EMAIL_REGEX = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
 
 export const Form = () => {
@@ -39,29 +41,39 @@ export const Form = () => {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit, onError)}>
+    <div className={styles['form-container']}>
+    <Container>
+      <form className={styles['user-form']} onSubmit={handleSubmit(onSubmit, onError)}>
+        <label className={styles['user-form-label']}>Full name</label>
         <input
           {...register("name", validationSchema.name)}
           placeholder="Full name"
+          className={styles['user-form-input']}
         />
         <FormErrorMessage errors={errors} name={"name"} />
+        <label className={styles['user-form-label']}>Email</label>
         <input
           type="input"
           {...register("email", validationSchema.email)}
-          placeholder="email"
+          placeholder="Email"
+          className={styles['user-form-input']}
         />
         <FormErrorMessage errors={errors} name={"email"} />
+        <label className={styles['user-form-label']}>Date of birth</label>
         <input
           type="date"
           {...register("dob", validationSchema.dob)}
+          className={styles['user-form-input']}
         />
         <FormErrorMessage errors={errors} name={"dob"} />
+        <label className={styles['user-form-label']}>Favourite Colour</label>
         <input
           {...register("favouriteColor", validationSchema.favouriteColor)}
           placeholder="Favourite Colour"
+          className={styles['user-form-input']}
         />
         <FormErrorMessage errors={errors} name={"favouriteColor"} />
+        <label className={`${styles['user-form-label']} ${styles['salary']}`}>Salary <p>£{salary}</p></label>
         <input
           type="range"
           min="0"
@@ -69,12 +81,13 @@ export const Form = () => {
           step="1000"
           {...register("salary", validationSchema.salary)}
           onChange={(e) => setSalary(e.target.value)}
+          className={styles['user-form-input']}
+          style={{ background: `linear-gradient(to right, #3d5a5b 0%, #3d5a5b ${salary/1000}%, #fff ${salary/1000}%, white 100%)`}}
         />
-
-        <p>£{salary}</p>
-        <FormErrorMessage errors={errors} name={"salary"} />
+      <FormErrorMessage errors={errors} name={"salary"} />
         <input type="submit" />
       </form>
-    </>
+    </Container>
+  </div>
   )
 }
