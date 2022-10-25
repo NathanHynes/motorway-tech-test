@@ -7,4 +7,33 @@ body {
 * {
   box-sizing: border-box;
   font-family: 'Fira Sans', Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+.btn {
+  width: 100%;
+}
+
+.btn, [type="submit"] {
+  font-size: 16px;
+  line-height: 24px;
+  padding: 8px;
+  border: none;
+  border-radius: 2px;
+  background-color: #3d5a5b;
+  color: white;
+  box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 12%), 0 1px 5px 0 rgb(0 0 0 / 20%);
+  transition: all 0.3s ease;
+  transition-property: opacity, box-shadow;
+  margin-top: 4px;
+  @media screen and (min-width: 768px) {
+    margin-top: 8px;
+  }
+  &:hover {
+    box-shadow: 0 3px 3px 0 rgb(0 0 0 / 14%), 0 1px 7px 0 rgb(0 0 0 / 12%), 0 3px 1px -1px rgb(0 0 0 / 20%);
+    opacity: 0.8;
+  }
+  &:active {
+    transform: matrix(0.95, 0, 0, 0.95, 0, 0);
+  }
 }

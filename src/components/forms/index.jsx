@@ -41,7 +41,7 @@ export const Form = () => {
   }
 
   return (
-    <div className={styles['form-container']}>
+    <section className={styles['form-container']}>
     <Container>
       <form className={styles['user-form']} onSubmit={handleSubmit(onSubmit, onError)}>
         <label className={styles['user-form-label']}>Full name</label>
@@ -88,6 +88,6 @@ export const Form = () => {
         <input type="submit" />
       </form>
     </Container>
-  </div>
+  </section>
   )
 }
