@@ -22,7 +22,7 @@ export const UserCard = ({ user }) => {
         <h3 className={styles.name}>{userName}</h3>
         <p className={styles.location}>{location}</p>
         <p className={styles.bio}>{bio}</p>
-        <button type="button" className='btn' onClick={()=>setShowModal(true)}>Show Image</button>
+        <button type='button' className='btn' onClick={()=>setShowModal(true)}>Show Image</button>
       </section>
       <section className={styles['stat-container']}>
         <div className={styles['user-stat']}>
