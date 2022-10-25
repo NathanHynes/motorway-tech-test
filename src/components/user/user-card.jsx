@@ -15,8 +15,6 @@ export const UserCard = ({ user }) => {
     total_photos: totalPhotos
   } = user.user
 
-
- //TODO: Add padding to Modal overlay, modal content make it 100% for mobile, image make 100% on mobile only.
   return (
     <div className={styles.card}>
       <section className={styles.profile}>

@@ -6,11 +6,8 @@ import styles from './user-gallery.module.scss'
 
 const USER_PROFILE_URL = 'images?limit=10'
 
-//<img src={`${img.url}.jpg`} alt=''/>
-
 export const UserGallery = () => {
   const { data } = useFetch(USER_PROFILE_URL)
-  console.log({data})
   return (
     <section className={styles['user-gallery-container']}>
       <Container display={'grid'}>

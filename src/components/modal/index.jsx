@@ -1,8 +1,12 @@
 import React from "react"
 import styles from './modal.module.scss'
 
-export const Modal = ({show, title, children, onClose}) => {
-
+export const Modal = ({
+  show,
+  title,
+  children,
+  onClose
+}) => {
   return (
       <div className={`${styles.modal} ${show ? styles.show : ''}`} onClick={onClose}>
         <div className={styles["modal-content"]} onClick={e => e.stopPropagation()}>
